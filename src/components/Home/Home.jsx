@@ -15,7 +15,7 @@ const Home = () => {
      
 
 
-      <img  src={  w1 } alt="" className="h-screen w-full absolute brightness-50  object-cover"/>
+      <img  src={  w1 } alt="" className="h-screen w-full absolute coverimg  object-cover"/>
 
       <div className='   mx-auto px-8 flex flex-col justify-center h-full'>
   
