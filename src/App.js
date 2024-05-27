@@ -12,19 +12,19 @@ import Slider2 from "./components/Slider2/Slider2";
 import Reviews from "./components/Reviews/Reviews";
 import Plans from "./components/Plans/Plans";
 import Footer from "./components/Footer/Footer";
-import Loading from "./assets/loading.svg";
+
 
 const App = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   const [darkMode, setDarkMode] = useState(true);
-  const [loading, setLoading] = useState(false);
+ 
   const component = useRef(null);
 
   const toggleDarkMode = () => setDarkMode(prev => !prev);
 
   useEffect(() => {
-    if (!loading) {
+  
       const animateGallery = (selector, offsetX) => {
         const items = gsap.utils.toArray(`${selector} .cards li`);
         gsap.set(items, { xPercent: 400, opacity: 0, scale: 0 });
@@ -89,13 +89,13 @@ const App = () => {
           end: "50%"
         }
       });
-    }
-  }, [loading]);
+    
+  }, []);
 
   return (
     <>
-      {loading && <img className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src={Loading} alt="Loading" />}
-      <div ref={component} className={`${darkMode ? 'dark' : ''} ${loading ? 'hidden' : ''} overflow-hidden`}>
+     {/*  {loading && <img className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src={Loading} alt="Loading" />} */}
+      <div ref={component} className={`${darkMode ? 'dark' : ''}  overflow-hidden`}>
         <Navbar setDarkMode={toggleDarkMode} />
         <Home darkMode={darkMode} />
         <Slider />
